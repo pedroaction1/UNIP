@@ -25,7 +25,7 @@ def pesquisar(inicio='', fim=''):
 
     if estacoes != False:
         for estacao in estacoes:
-            texto = caminho.cget("text") + " --> " + estacao
+            texto = caminho.cget("text") + " -> " + estacao
             caminho.config(text=texto)
     else:
         texto = "Impossivel encontrar o destino final com a Busca Gulosa."
@@ -55,12 +55,12 @@ caixa_inicio.grid(column=0, row=2, padx=10, pady=10)
 
 # Destino Final
 destino = tk.Label(janela, text="Destino Final")
-destino.grid(column=2, row=1, padx=10, pady=10)
+destino.grid(column=2, row=1, padx=30, pady=10)
 
 #Combobox Destino
 caixa_final = tk.Combobox(janela, textvariable="burh", state="readonly")
 caixa_final['values'] = ('Arad', 'Zerind', 'Oradea', 'Sibiu', 'Timisoara', 'Lugoj', 'Mehadia', 'Dobreta', 'Craiova', 'Rimnicu', 'Fagaras', 'Pitesti', 'Bucharest', 'Giurgiu', 'Urziceni', 'Hirsova', 'Eforie', 'Vaslui', 'Iasi', 'Neamt')
-caixa_final.grid(column=2, row=2, padx=10, pady=10)
+caixa_final.grid(column=2, row=2, padx=30, pady=10)
 
 #Botão
 botao = tk.Button(janela, text="Calcular Rota", command=lambda: pesquisar(caixa_inicio.get(), caixa_final.get()))
@@ -139,5 +139,5 @@ L_hirsova_eforie = canvas.create_line(402, 225, 438, 255, width=2)
 L_vaslui_iasi = canvas.create_line(379, 130, 332, 90, width=2)
 L_iasi_neamt = canvas.create_line(325, 83, 275, 62, width=2)
 
-janela.geometry("600x600")
+janela.geometry("750x600")
 janela.mainloop()
